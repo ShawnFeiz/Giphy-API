@@ -1,13 +1,15 @@
 $(document).ready(function() {
 
 //array of strings that are each related to the topic: Food? Sports Teams? Date night destinations? 
-var topics = ["tacos", "burger", "steak", "sandwich"];
+var topics = ["tacos", "burger", "steak", "sandwich", "hot dogs", "lasagna", "pasta"];
 
 //create a for loop that creates buttons for each string in the topics array above
 for (var i = 0; i < topics.length; i++) {
     var newButton = $("<button>");
-    newButton.text(topics[i]).addClass("btn-lg btn-primary btn-custom").attr("data-person");
-    $(".appendButtons").append(newButton);
+    newButton.text(topics[i]).addClass("btn-lg btn-primary btn-custom").attr("data-person", topics[i]);
+    $(".buttons").append(newButton);
+    console.log(newButton);
+    
 
 };
 
@@ -35,11 +37,9 @@ $("button").on("click", function() {
         var img = $("<img>");  
         img.attr("src", results[i].images.fixed_height.url); 
         foodDiv.append(img);
-        $(".appendImg").append(foodDiv);
-
+        $(".appendImg").prepend(foodDiv);
 
     };
-
     
 
 
