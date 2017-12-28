@@ -2,7 +2,10 @@ $(document).ready(function() {
 
 //array of strings that are each related to the topic: Food? Sports Teams? Date night destinations? 
 var topics = ["tacos", "ice cream", "burger", "steak", "sandwich", "hot dogs", "lasagna", "pasta"];
+
+//global variables
 var img;
+var state;
 
 //create a for loop that creates buttons for each string in the topics array above
 for (var i = 0; i < topics.length; i++) {
@@ -44,41 +47,37 @@ for (var i = 0; i < topics.length; i++) {
         for (var i = 0; i < results.length; i++) {
             img = $("<img>");    
             img.attr("data-state", "still").addClass("gif"); 
-            img.attr("src", results[i].images.fixed_height_still.url); 
+            img.attr("src", results[i].images.fixed_height_still.url);
+            img.attr("data-animate", results[i].images.fixed_height.url);
+            img.attr("data-still", results[i].images.fixed_height_still.url);
+            
+            state = img.attr("data-state");
+
+
+            //Grab the rating, set to a variable
             var rating = results[i].rating;
             var p = $("<p>").text("Rating: " + rating);
+
+            //append the elements to each other & the page
             foodDiv.append(p);
             foodDiv.append(img);
             $(".appendImg").prepend(foodDiv);
-        };
         
-        var state = $(this).attr("data-state");
-        if (state === "still") {
-            img.attr("src", results[i].images.fixed_height.url);
-            img.attr("data-state", "animate");
-            } else {
-            img.attr("src", results[i].images.fixed_height_still.url);
-            img.attr("data-state", "still");
             };
-
-        
-
-
         });
     });
 
-    // $(".gif").on("click", function(){
-    //     console.log("hello");
-    //     var state = $(this).attr("data-state");
-    //         if (state === "still") {
-    //             img.attr("src", results[i].images.fixed_height.url);
-    //             img.attr("data-state", "animate");
-    //           } else {
-    //             img.attr("src", results[i].images.fixed_height_still.url);
-    //             img.attr("data-state", "still");
-    //           };
+    $(".appendImg").on("click", ".gif", function(){
+        console.log("test");
+        if (state === "still") {
+            img.attr("src", $(this).attr("data-animate"));
+            img.attr("data-state", "animate");
+            } else {
+            img.attr("src", $(this).attr("data-still"));
+            img.attr("data-state", "still");
+            };
+        });
 
-    // });
 
 // $(".submitButton").on("click", function(){
 //     userButton();
