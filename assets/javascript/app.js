@@ -45,15 +45,14 @@ for (var i = 0; i < topics.length; i++) {
         
         // create a for loop that creates a div with img attribuite for each of the ten results
         for (var i = 0; i < results.length; i++) {
+
+            //create img + attributes for every gif
             img = $("<img>");    
             img.attr("data-state", "still").addClass("gif"); 
             img.attr("src", results[i].images.fixed_height_still.url);
             img.attr("data-animate", results[i].images.fixed_height.url);
             img.attr("data-still", results[i].images.fixed_height_still.url);
             
-            state = img.attr("data-state");
-
-
             //Grab the rating, set to a variable
             var rating = results[i].rating;
             var p = $("<p>").text("Rating: " + rating);
@@ -68,13 +67,13 @@ for (var i = 0; i < topics.length; i++) {
     });
 
     $(".appendImg").on("click", ".gif", function(){
-        console.log("test");
+        state = $(this).attr("data-state");
         if (state === "still") {
-            img.attr("src", $(this).attr("data-animate"));
-            img.attr("data-state", "animate");
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
             } else {
-            img.attr("src", $(this).attr("data-still"));
-            img.attr("data-state", "still");
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
             };
         });
 
@@ -83,7 +82,6 @@ for (var i = 0; i < topics.length; i++) {
 //     userButton();
 // });
 
-console.log(img);
 
 });
 
