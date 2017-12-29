@@ -83,9 +83,19 @@ generateButtons();
         });
 
 
+//click event to add a new button. Needs "enter" functionality
 $(".submitButton").on("click", function(){
     userButton();
 });
+
+
+// $(".food-input").keyup(function(event) {
+//     if (event.keyCode === 13) {
+//         $(".submitButton").click();
+//         return false;
+//     }
+// });
+
 
 
 });
