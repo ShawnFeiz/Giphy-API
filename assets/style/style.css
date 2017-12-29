@@ -12,7 +12,21 @@ body {
 .btn-custom {
     margin-right: 10px;
     margin-bottom: 10px; 
+    background: #ff505c;
 }
+
+.btn-custom:hover {
+    background: #00ffa0;
+}
+
+.btn-success {
+    background: #00ffa0;
+}
+
+.btn-success:hover {
+    background: #ff505c;  
+}
+
 
 img {
     margin: 15px;
