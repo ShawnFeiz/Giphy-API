@@ -1,12 +1,18 @@
 .jumbotron {
     background: url("https://upload.wikimedia.org/wikipedia/en/4/43/Giphy_Logo.png");
-    background-size: 10%;
-    padding: 8.50%;
+    background-size: 100%;
+    padding: 10.5%;
+    background-position: center;
 }
 
 
 body {
     margin-top: 25px;
+}
+
+.btn-primary {
+    background-color: #faff94;
+    border: none;
 }
 
 .btn-custom {
@@ -19,8 +25,21 @@ body {
     background: #00ffa0;
 }
 
+.btn-custom:focus {
+    background: #b200ff;
+    ;
+}
+
+.btn-custom:target {
+    background: #faff94;
+}
+
+
+
+
 .btn-success {
     background: #00ffa0;
+    border: none;
 }
 
 .btn-success:hover {
