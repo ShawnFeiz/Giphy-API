@@ -1,29 +1,36 @@
 $(document).ready(function() {
 
 //array of strings that are each related to the topic: Food? Sports Teams? Date night destinations? 
-var topics = ["tacos", "ice cream", "burger", "steak", "sandwich", "hot dogs", "lasagna", "pasta"];
+var topics = ["tacos", "ice cream", "burger", "steak", "sandwich", "hot dogs", "lasagna", "pasta", "pizza", "chips", "sushi", "burrito", "chocolate"];
 
 //global variables
 var img;
 var state;
 
 //create a for loop that creates buttons for each string in the topics array above
+function generateButtons(){
 for (var i = 0; i < topics.length; i++) {
     var newButton = $("<button>");
     newButton.text(topics[i]).addClass("btn-lg btn-primary btn-custom").attr("data-person", topics[i]);
     $(".buttons").append(newButton);
     console.log(newButton);
 };
+};
+//a nigga just put a function above
+generateButtons();
 
+function userButton() {
+    var newFood = $(".food-input").val();
+    topics.push(newFood);
+    var newButton1 = $("<button>");
+    newButton1.text(newFood).addClass("btn-lg btn-primary btn-custom").attr("data-person", newFood);
+    $(".buttons").append(newButton1);
+    console.log(topics);
+};
 
-    function userButton() {
-        var newFood = $(".food-input").val();
-        topics.push(newFood);
-        var newButton1 = $("<button>");
-        newButton1.text(newFood).addClass("btn-lg btn-primary btn-custom").attr("data-person", newFood);
-        $(".buttons").append(newButton1);
-        console.log(topics);
-    };
+function getGiphy() {
+
+};
 
 
 //===================================================================
@@ -45,13 +52,9 @@ for (var i = 0; i < topics.length; i++) {
         
         // create a for loop that creates a div with img attribuite for each of the ten results
         for (var i = 0; i < results.length; i++) {
-
             //create img + attributes for every gif
             img = $("<img>");    
-            img.attr("data-state", "still").addClass("gif"); 
-            img.attr("src", results[i].images.fixed_height_still.url);
-            img.attr("data-animate", results[i].images.fixed_height.url);
-            img.attr("data-still", results[i].images.fixed_height_still.url);
+            img.attr("data-state", "still").addClass("gif").attr("src", results[i].images.fixed_height_still.url).attr("data-animate", results[i].images.fixed_height.url).attr("data-still", results[i].images.fixed_height_still.url); 
             
             //Grab the rating, set to a variable
             var rating = results[i].rating;
@@ -61,7 +64,6 @@ for (var i = 0; i < topics.length; i++) {
             foodDiv.append(p);
             foodDiv.append(img);
             $(".appendImg").prepend(foodDiv);
-        
             };
         });
     });
