@@ -9,33 +9,34 @@ var state;
 
 //create a for loop that creates buttons for each string in the topics array above
 function generateButtons(){
-for (var i = 0; i < topics.length; i++) {
-    var newButton = $("<button>");
-    newButton.text(topics[i]).addClass("btn-lg btn-primary btn-custom").attr("data-person", topics[i]);
-    $(".buttons").append(newButton);
-    console.log(newButton);
+    for (var i = 0; i < topics.length; i++) {
+        var newButton = $("<button>");
+        newButton.text(topics[i]).addClass("btn-lg btn-primary btn-custom").attr("data-person", topics[i]);
+        $(".buttons").append(newButton);
+        // console.log(newButton);
+    };
 };
-};
-//a nigga just put a function above
-generateButtons();
 
 function userButton() {
-    var newFood = $(".food-input").val();
-    topics.push(newFood);
-    var newButton1 = $("<button>");
-    newButton1.text(newFood).addClass("btn-lg btn-primary btn-custom").attr("data-person", newFood);
-    $(".buttons").append(newButton1);
+    $(".buttons").empty();
+    var userFood = $(".food-input").val();
+    topics.push(userFood);
+    var userButton = $("<button>");
+    userButton.text(userFood).addClass("btn-lg btn-primary btn-custom").attr("data-person", userFood);
     console.log(topics);
+    generateButtons();
+
 };
 
-function getGiphy() {
+function getGiphy() { 
 
 };
 
 
 //===================================================================
+//LETS BEGIN NOW 
 //===================================================================
-
+generateButtons();
 
     $("button").on("click", function() {
         //variable that holds the giphy url for AJAX call
@@ -47,8 +48,9 @@ function getGiphy() {
             url: queryURL,
             method: "GET"           
         }).done(function(response){
-            var results = response.data;
-            var foodDiv = $("<div>");
+
+        var results = response.data;
+        var foodDiv = $("<div>");
         
         // create a for loop that creates a div with img attribuite for each of the ten results
         for (var i = 0; i < results.length; i++) {
