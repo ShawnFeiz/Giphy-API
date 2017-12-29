@@ -16,14 +16,14 @@ for (var i = 0; i < topics.length; i++) {
 };
 
 
-    // function userButton() {
-    //     var newFood = $(".food-input").val();
-    //     topics.push(newFood);
-    //     // var newButton1 = $("<button>");
-    //     // newButton1.text(newFood).addClass("btn-lg btn-primary btn-custom").attr("data-person", newFood);
-    //     // $(".buttons").append(newButton1);
-    //     console.log(topics);
-    // };
+    function userButton() {
+        var newFood = $(".food-input").val();
+        topics.push(newFood);
+        var newButton1 = $("<button>");
+        newButton1.text(newFood).addClass("btn-lg btn-primary btn-custom").attr("data-person", newFood);
+        $(".buttons").append(newButton1);
+        console.log(topics);
+    };
 
 
 //===================================================================
@@ -66,6 +66,7 @@ for (var i = 0; i < topics.length; i++) {
         });
     });
 
+    // $(".gif").on("click", function(){
     $(".appendImg").on("click", ".gif", function(){
         state = $(this).attr("data-state");
         if (state === "still") {
@@ -78,9 +79,9 @@ for (var i = 0; i < topics.length; i++) {
         });
 
 
-// $(".submitButton").on("click", function(){
-//     userButton();
-// });
+$(".submitButton").on("click", function(){
+    userButton();
+});
 
 
 });

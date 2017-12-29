@@ -1,3 +1,14 @@
+.jumbotron {
+    background: url("https://upload.wikimedia.org/wikipedia/en/4/43/Giphy_Logo.png");
+    background-size: 10%;
+    padding: 8.50%;
+}
+
+
+body {
+    margin-top: 25px;
+}
+
 .btn-custom {
     margin-right: 10px;
     margin-bottom: 10px; 
@@ -6,3 +17,10 @@
 img {
     margin: 15px;
 }
+
+p {
+    width: 50%;
+    margin-left: 15px;
+}
+
+
