@@ -11,7 +11,6 @@ body {
 }
 
 .btn-primary {
-    background-color: #faff94;
     border: none;
 }
 
@@ -27,15 +26,11 @@ body {
 
 .btn-custom:focus {
     background: #b200ff;
-    ;
 }
 
-.btn-custom:target {
+.btn-custom:active:hover {
     background: #faff94;
 }
-
-
-
 
 .btn-success {
     background: #00ffa0;
@@ -45,7 +40,6 @@ body {
 .btn-success:hover {
     background: #ff505c;  
 }
-
 
 img {
     margin: 15px;

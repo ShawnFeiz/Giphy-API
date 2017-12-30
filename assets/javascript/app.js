@@ -39,8 +39,10 @@ function getGiphy() {
 generateButtons();
 
     $("button").on("click", function() {
-        //variable that holds the giphy url for AJAX call
+        //clear div that holds img/gifs
         $(".appendImg").empty();
+
+        //variable that holds the giphy url for AJAX call
         var food = $(this).attr("data-person");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         food + "&api_key=BKJ0Dc300tsB4NvDkpGyZn4Hu2vjV2J9&limit=10";
