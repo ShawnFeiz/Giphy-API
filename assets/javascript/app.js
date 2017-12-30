@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 //array of strings that are each related to the topic: Food? Sports Teams? Date night destinations? 
-var topics = ["tacos", "ice cream", "burger", "steak", "sandwich", "hot dogs", "lasagna", "pasta", "pizza", "chips", "sushi", "burrito", "chocolate"];
+var topics = ["tacos", "ice cream", "burger", "steak", "sandwich", "hot dogs", "lasagna", "pasta", "pizza", "chips", "sushi", "burrito", "chocolate", "cheese"];
 
 //global variables
 var img;
@@ -25,7 +25,6 @@ function userButton() {
     userButton.text(userFood).addClass("btn-lg btn-primary btn-custom").attr("data-person", userFood);
     generateButtons();
     start();
-
 };
 
 function start(){
@@ -70,7 +69,6 @@ function start(){
 //LETS BEGIN NOW 
 //===================================================================
 
-
 generateButtons();
 start();
 
@@ -88,18 +86,9 @@ $(".appendImg").on("click", ".gif", function(){
 
 
 //click event to add a new button. Needs "enter" functionality
-$(".submitButton").on("click", function(){
+$(".submitButton").on("click", function(event){
     userButton();
 });
-
-
-// $(".food-input").keyup(function(event) {
-//     if (event.keyCode === 13) {
-//         $(".submitButton").click();
-//         return false;
-//     }
-// });
-
 
 
 });
