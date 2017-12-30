@@ -90,6 +90,12 @@ $(".submitButton").on("click", function(event){
     userButton();
 });
 
+$('.food-input').keypress(function(e) {
+    if(e.which == 13) { // Checks for the enter key
+        e.preventDefault(); // Stops browser from triggering the button to be 
+        userButton();
+    }
+});
 
 });
 
