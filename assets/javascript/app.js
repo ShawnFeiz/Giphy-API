@@ -23,21 +23,12 @@ function userButton() {
     topics.push(userFood);
     var userButton = $("<button>");
     userButton.text(userFood).addClass("btn-lg btn-primary btn-custom").attr("data-person", userFood);
-    console.log(topics);
     generateButtons();
+    start();
 
 };
 
-function getGiphy() { 
-
-};
-
-
-//===================================================================
-//LETS BEGIN NOW 
-//===================================================================
-generateButtons();
-
+function start(){
     $("button").on("click", function() {
         //clear div that holds img/gifs
         $(".appendImg").empty();
@@ -72,18 +63,28 @@ generateButtons();
             };
         });
     });
+};
 
-    // $(".gif").on("click", function(){
-    $(".appendImg").on("click", ".gif", function(){
-        state = $(this).attr("data-state");
-        if (state === "still") {
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-            } else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-            };
-        });
+
+//===================================================================
+//LETS BEGIN NOW 
+//===================================================================
+
+
+generateButtons();
+start();
+
+// $(".gif").on("click", function(){
+$(".appendImg").on("click", ".gif", function(){
+    state = $(this).attr("data-state");
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+        } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+        };
+    });
 
 
 //click event to add a new button. Needs "enter" functionality
