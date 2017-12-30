@@ -87,7 +87,7 @@ $(".appendImg").on("click", ".gif", function(){
 
 //click event to add a new button. Needs "enter" functionality
 $(".submitButton").on("click", function(event){
-    userButton();
+     userButton();
 });
 
 $('.food-input').keypress(function(e) {
