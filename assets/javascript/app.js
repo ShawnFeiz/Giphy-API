@@ -53,8 +53,9 @@ function start(){
             
             //Grab the rating, set to a variable
             var rating = results[i].rating;
+            var rating = rating.toUpperCase();
             var p = $("<p>").text("Rating: " + rating);
-
+           
             //append the elements to each other & the page
             foodDiv.append(p);
             foodDiv.append(img);
